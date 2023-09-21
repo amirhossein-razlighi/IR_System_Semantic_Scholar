@@ -12,19 +12,19 @@ from sklearn.neighbors import NearestNeighbors
 from collections import defaultdict
 from math import log10
 
-with open("Kasaei.json", "r") as f:
+with open("results/Kasaei.json", "r") as f:
     kasaei_data = json.load(f)
 
-with open("Rohban.json", "r") as f:
+with open("results/Rohban.json", "r") as f:
     rohban_data = json.load(f)
 
-with open("Sharifi.json", "r") as f:
+with open("results/Sharifi.json", "r") as f:
     sharifi_data = json.load(f)
 
-with open("Soleymani.json", "r") as f:
+with open("results/Soleymani.json", "r") as f:
     soleymani_data = json.load(f)
 
-with open("Rabiee.json", "r") as f:
+with open("results/Rabiee.json", "r") as f:
     rabiee_data = json.load(f)
 
 
@@ -102,7 +102,7 @@ papers_by_prof = {}
 profs = ["kasaei", "Rabiee", "Rohban", "Sharifi", "Soleymani"]
 
 for prof in profs:
-    with open(f"{prof}.json", "r") as f:
+    with open(f"results/{prof}.json", "r") as f:
         data = json.load(f)
         papers_by_prof[prof] = data
 
@@ -514,7 +514,7 @@ top_authors = hit_algorithm(papers_dataset, 10)
 # print the top authors
 print(top_authors)
 
-with open("recommended_papers.json", "r") as fp:
+with open("results/recommended_papers.json", "r") as fp:
     recommended_papers = json.load(fp)
 
 fields_set = set(
